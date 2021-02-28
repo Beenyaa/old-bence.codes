@@ -1,0 +1,160 @@
+// Custom.scss
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+body {
+  min-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #121212;
+  color: #ededed;
+}
+
+p{
+  text-align: center;
+  @media (max-width: 760px) {
+    font-size: 14.72px;
+  }
+  @media (max-width: 375px) {
+    font-size: 10.72px;
+  }
+}
+
+.external-frontpage {
+  //text-decoration: none;
+  color: white;
+  cursor: pointer;
+  &:hover{
+    color: #9adfb0;
+  }
+}
+
+#gatsby-focus-wrapper,
+#___gatsby {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.CenterModal {
+  background-color: #121212;
+  color: white;
+}
+
+.ModalBackdrop { 
+  z-index: 50;
+}
+
+span{
+  font-size: inherit;
+}
+
+.modal{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 120%;
+  background: rgba(14,17,17, 0.7);
+  backdrop-filter: blur(20px);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 0 0;
+  &-exit {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: 10px;
+    height: 10px;
+    background: rgb(255, 0, 76);
+    outline: none;
+    border: 0; 
+    border-radius: 10rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    &:active{
+      filter:brightness(0.8);
+    }
+  }
+  &-body {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    background: rgba(24, 27, 25, 1);;
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 0px 0px 25px 25px;
+    p {
+      text-align: justify;
+      text-justify: inter-word;
+      color: white;
+    }
+    h2 {
+      text-align: justify;
+      text-justify: inter-word;
+      color: white;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    label {
+      text-align: justify;
+      text-justify: inter-word;
+      display: block;
+      margin-bottom: .2em;
+    }
+    input {
+      background-color: #2B3332;
+      border: 0;
+      outline: 0; 
+      width: 100%;
+      height: 25px;
+      border-radius: 0.5rem;
+      color: white;
+      font:inherit;
+    }
+    textarea {
+      resize: none;
+      background-color: #2B3332;
+      border: 0;
+      outline: 0;
+      width: 100%;
+      height: 300px;
+      border-radius: 0.5rem;
+      color: white;
+      font:inherit;
+    }
+  }
+}
+
+.submit {
+  font-size: 19px;
+  width: 100%;
+  border-radius: 1rem;
+  color: rgba(24, 27, 25, 1);
+  background: #9adfb0;
+  padding: 1rem 2rem;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-family: 1.2rem;
+  text-transform: uppercase;
+  user-select: none;
+  &:active{
+    filter:brightness(0.8);
+  }
+}
