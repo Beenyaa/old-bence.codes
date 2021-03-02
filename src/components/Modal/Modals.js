@@ -41,7 +41,7 @@ export const ContactMeModal = (props) => {
   return {
     children: (
       <>
-        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit="submit">
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit="submit" action="/">
         <p>
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required/>
