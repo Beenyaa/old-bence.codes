@@ -1,9 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ContactContainer, ContactRow} from '../ContactRow';
 import bence_animoji from '../../images/bence_animoji.png'
 import { MiddleAlignContainer } from '../BodyContainer';
 import {Linkedin, Github, DiscordContactRow} from '../Icons';
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
+const handleSubmit = e => {
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode({ "form-name": "contact", ...this.state })
+  })
+    .then(() => alert("Success!"))
+    .catch(error => alert(error));
+
+  e.preventDefault();
+};
+
+const handleChange = e => { 
+  this.setState({ [e.target.name]: e.target.value })
+}
 
 export const AboutMeModal = (props) => {
   return {
@@ -38,21 +59,23 @@ export const AboutMeModal = (props) => {
 }
 
 export const ContactMeModal = (props) => {
+  const { name, email, message } = this.state;
+
   return {
     children: (
       <>
-        <form name="contact" netlify>
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
         <p>
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required/>
+          <input type="text" id="name" name="name" value={name} onChange={this.handleChange} required/>
         </p>
         <p>
           <label for="email">Email</label>
-          <input type="text" id="email" name="email" required/>
+          <input type="text" id="email" name="email" value={email} onChange={this.handleChange} required/>
         </p>
         <p>
           <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" value={message} onChange={this.handleChange} required></textarea>
         </p>
         <p>
           <button class="submit" type="submit"><b>Send</b></button>
