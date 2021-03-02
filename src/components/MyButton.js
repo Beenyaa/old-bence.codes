@@ -62,8 +62,9 @@ export const GhostButton = styled.button`
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
+@media (hover: hover) {
 &:hover:after { 
   width: 100%; 
   left: 0; 
-}
+}}
 `;
