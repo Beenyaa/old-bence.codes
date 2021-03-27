@@ -50,15 +50,24 @@ export const ContactMeModal = (props) => {
   }
 
   const handleSubmit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formState })
-    })
-      .then(() => console.log("Success!"))
-      .catch(error => console.log(error));
+    if(formState.name.length>1 && formState.email.length>1 && formState.message.length>1){
 
-    e.preventDefault();
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formState })
+      })
+        .then(() => console.log("Success!"))
+        .catch(error => console.log(error));
+  
+      e.preventDefault();
+
+      document.getElementById('name').value = ''
+      document.getElementById('email').value = ''
+      document.getElementById('message').value = ''
+
+    }
+    
   };
 
   const handleChange = e => setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -69,18 +78,18 @@ export const ContactMeModal = (props) => {
         <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
         <p>
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" value={formState.name} onChange={handleChange} required/>
+          <input type="text" id="name" name="name" value={formState.name} onChange={handleChange} placeholder="Enter your name" required/>
         </p>
         <p>
           <label for="email">Email</label>
-          <input type="text" id="email" name="email" value={formState.email} onChange={handleChange} required/>
+          <input type="text" id="email" name="email" value={formState.email} onChange={handleChange} placeholder="Enter your email" required/>
         </p>
         <p>
           <label for="message">Message</label>
-          <textarea id="message" name="message" value={formState.message} onChange={handleChange} required></textarea>
+          <textarea id="message" name="message" value={formState.message} onChange={handleChange} placeholder="Enter your message😁" required></textarea>
         </p>
         <p>
-          <button class="submit" type="submit"><b>Send</b></button>
+          <button class="submit" type="submit" onClick={handleSubmit}><b>Send</b></button>
         </p>
       </form>
       </>
