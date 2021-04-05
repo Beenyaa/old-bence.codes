@@ -15,10 +15,18 @@ const Navigation = () => {
       <ModalProvider>
         <nav>
             <AboutMeButton/>
-            <ContactMeButton/>
         </nav>
     </ModalProvider>
   )
+
+//   return (
+//     <ModalProvider>
+//       <nav>
+//           <AboutMeButton/>
+//           <ContactMeButton/>
+//       </nav>
+//   </ModalProvider>
+// )
 }
 
 export default Navigation
