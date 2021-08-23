@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {ContactContainer, ContactRow} from '../ContactRow';
-import bence from '../../images/me.jpg'
+import me from '../../images/me.jpg'
 import { MiddleAlignContainer } from '../BodyContainer';
 import {Linkedin, Github, DiscordContactRow} from '../Icons';
 
@@ -18,7 +18,7 @@ export const AboutMeModal = (props) => {
         </p>
         <MiddleAlignContainer>
         <ContactContainer>
-          <img src={bence} alt="Me" />
+          <img src={me} alt="Me" />
           <div>
             <DiscordContactRow/>
             <ContactRow href={'https://www.linkedin.com/in/bencegadanyi/'} rel="noreferrer" target="_blank">
