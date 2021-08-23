@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {ContactContainer, ContactRow} from '../ContactRow';
-import me from '../../images/me.jpg'
+import me from '../../images/me.png'
 import { MiddleAlignContainer } from '../BodyContainer';
 import {Linkedin, Github, DiscordContactRow} from '../Icons';
 
