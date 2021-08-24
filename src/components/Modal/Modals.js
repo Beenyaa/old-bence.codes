@@ -9,7 +9,7 @@ export const AboutMeModal = (props) => {
     children: (
       <>
         <p>
-          Hey, I'm a Final Year Undergraduate Computer Science student with a goal to become a full-stack software engineer.
+          Hey, I'm a 2021 First Class Honours Computer Science Graduate and Full-Stack Software Engineer.
           A life long interest in computers and academic experience in programming since Secondary School, I've learned a lot about programming principles,
           techniques and systems architecture. Through out the years I have developed a real passion
           for coding. Currently I am working on side projects, exploring technologies that are new to me and planning on contributing to Open Source software
