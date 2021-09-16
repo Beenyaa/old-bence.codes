@@ -50,7 +50,7 @@ const PageConstruct = () => {
           <MiddleAlignContainer>
             <div>
               <p>
-              soon to start @ <b><a class="external-frontpage" href="https://www.netcompany.com" rel="noreferrer" target="_blank">netcompany</a></b>
+              developer/consultant @ <b><a class="external-frontpage" href="https://www.netcompany.com" rel="noreferrer" target="_blank">netcompany</a></b>
               </p>
             </div>
           </MiddleAlignContainer>
